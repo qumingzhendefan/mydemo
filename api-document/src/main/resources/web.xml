@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!-- 对标签有顺序要求 -->
+    <!-- 初始化应用上下文 -->
+    <!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>WEB-INF/classes/spring.xml</param-value>
+        </context-param> -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:/spring.xml</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+
+
+
+    <servlet>
+        <servlet-name>Spring Mvc Servlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:/spring-mvc.xml</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Spring Mvc Servlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
+
+
+    <!--  附：web.xml标签放置顺序
+    1. icon?
+    2. display-name?
+    3. description?
+    4. distributable?
+    5. context-param*
+    6. filter*
+    7. filter-mapping*
+    8. listener*
+    9. servlet*
+    10.servlet-mapping*
+    11.session-config?
+    12.mime-mapping*
+    13.welcome-file-list?
+    14.error-page*
+    15.taglib*
+    16.resource-env-ref*
+    17.resource-ref*
+    18.security-constraint*
+    19.login-config?
+    20.security-role*
+    21.env-entry*
+    22.ejb-ref*
+    23.ejb-local-ref
+    "?"表示该标签出现次数最多为1，"*"表示可以多次出现。 -->
+
+
+</web-app>

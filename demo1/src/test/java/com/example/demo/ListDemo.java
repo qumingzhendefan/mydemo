@@ -7,7 +7,7 @@ import java.util.List;
 public class ListDemo {
 
     public static void main(String[] args) {
-        listSelect();
+        intListDemo();
     }
 
     public static void listSelect() {
@@ -55,5 +55,52 @@ public class ListDemo {
         list1.removeAll(list2);
         list1.addAll(list2);
 //        return list1;
+    }
+
+    public static void addListTest(){
+        List<String> list = new ArrayList<>();
+        list.add("0");
+        System.out.println(list.size());
+        addList(list);
+        System.out.println(list.size());
+    }
+
+    public static List<String> addList(List<String> list){
+        list.add("2");
+        return list;
+    }
+
+    public static void addIndexValue(){
+        List<String> strList = new ArrayList<>(10);
+        strList.add(9,"9");
+        System.out.println(strList);
+    }
+
+    public static void sort(List<List<String>> strSs){
+        List<String> returnS = new ArrayList<>();
+        int flag=0;
+        for (int i  = 0;i < strSs.size();i++){
+            List<String> strs = strSs.get(i);
+            if(flag < strs.size()){
+                returnS.add(strs.get(flag));
+                if(i == strSs.size()){
+                    i = -1;
+                    flag++;
+                }
+            }else{
+                break;
+            }
+        }
+    }
+
+    public static void intListDemo(){
+        int flag = 0;
+        addInt(flag);
+        System.out.println(flag);
+    }
+
+    public static void addInt(int flag){
+        flag++;
+        System.out.println(flag);
     }
 }

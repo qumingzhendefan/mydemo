@@ -1,4 +1,4 @@
-package com.example.demo.common.result;
+package com.example.feign.common;
 
 /**
  * 统一响应类

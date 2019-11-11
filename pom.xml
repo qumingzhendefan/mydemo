@@ -19,6 +19,7 @@
         <module>hystrix</module>
         <module>zuul</module>
         <module>demo1</module>
+        <module>api-document</module>
     </modules>
 
     <groupId>com.example</groupId>
@@ -51,6 +52,9 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
